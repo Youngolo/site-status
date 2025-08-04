@@ -7,13 +7,14 @@ import pkg from "./package.json";
 
 // site env
 const siteConfig = {
-  siteTitle: process.env.SITE_TITLE || "16C 站点监测",
-  siteDescription: process.env.SITE_DESCRIPTION || "一个简约的站点监测",
-  siteKeywords: process.env.SITE_KEYWORDS || "站点监测,监测,监控",
+  siteTitle: process.env.SITE_TITLE || "16C 监测服务",
+  siteDescription: process.env.SITE_DESCRIPTION || "一个简约的监测服务 | a simple monitoring service, power by uptimerobot",
+  siteKeywords: process.env.SITE_KEYWORDS || "监测服务,监测,监控",
   siteLogo: process.env.SITE_LOGO || "/favicon.ico",
-  siteIcp: process.env.SITE_ICP || "",
+  siteIcp: process.env.SITE_ICP || "湘ICP备20010719号-2",
   countDays: Number(process.env.COUNT_DAYS || 60),
-  showLink: process.env.SHOW_LINK === "true" || true,
+  showLink: process.env.SHOW_LINK === "true" || false,
+  needLogin: process.env.SITE_PASSWORD != undefined && process.env.SITE_PASSWORD.length > 0 || false,
   platform: process.env.DEPLOYMENT_PLATFORM || "cloudflare",
   version: pkg.version,
 };
@@ -92,7 +93,7 @@ export default defineNuxtConfig({
     apiUrl: process.env.API_URL || "https://api.uptimerobot.com/v2/",
     apiKey: process.env.API_KEY,
     sitePassword: process.env.SITE_PASSWORD,
-    siteSecretKey: process.env.SITE_SECRE_KEY || "site-status",
+    siteSecretKey: process.env.SITE_SECRE_KEY || "Young-Status",
     public: siteConfig,
   },
   devServer: { port: 8566 },

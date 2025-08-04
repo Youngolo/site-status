@@ -1,6 +1,6 @@
 <template>
   <footer id="footer">
-    <!-- <n-flex class="link" align="center">
+    <n-flex class="link" align="center" v-if="showLink">
       <n-button
         v-for="(item, key, index) in linkData"
         :key="index"
@@ -13,7 +13,7 @@
           <Icon :name="`icon:${key}`" />
         </template>
       </n-button>
-    </n-flex> -->
+    </n-flex>
     <n-flex :size="4" class="text" align="center" vertical>
       <n-p depth="3">
         <n-text depth="3" @click="jumpLink(linkData.github)">
@@ -28,27 +28,27 @@
         </n-text>
         {{ $t("footer.interface") }} |
         {{ $t("footer.checkFrequency") }}
-        {{ $t("footer.fiveMinutes") }}
-      </n-p>
-      <!-- <n-p depth="3">
-        Copyright &copy; 2020 - {{ new Date().getFullYear() }}
-        <n-text depth="3" @click="jumpLink(linkData.home)"> IMSYY </n-text>
+        {{ $t("footer.fiveMinutes") }} |
         <n-text
-          v-if="siteIcp"
+          v-if="siteIcp.length > 0"
           depth="3"
           @click="jumpLink('https://beian.miit.gov.cn/')"
         >
-          | {{ siteIcp }}
+          {{ siteIcp }}
         </n-text>
-      </n-p> -->
+      </n-p>
+      <n-p depth="3">
+        <!-- Copyright &copy; 2020 - {{ new Date().getFullYear() }} -->
+        <!-- <n-text depth="3" @click="jumpLink(linkData.home)"> IMSYY </n-text> -->
+      </n-p>
     </n-flex>
   </footer>
 </template>
 
 <script setup lang="ts">
 const { public: configPublic } = useRuntimeConfig();
-const { siteIcp, version } = configPublic;
-
+const { siteIcp, version, showLink } = configPublic;
+// console.log( siteIcp, version, showLink );
 const linkData = {
   github: "https://github.com/imsyy/site-status",
   home: "https://www.imsyy.top",

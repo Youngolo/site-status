@@ -11,10 +11,6 @@
 <img src="https://s1.ax1x.com/2023/07/20/pCHnLLt.png" alt="demo"/>
 </div>
 
-## 👀 Demo
-
-> Demo password: `123456`
-
 - [IMSYY-站点监测](https://status.imsyy.top/)
 
 ## 🎉 特色
@@ -40,20 +36,7 @@
 - 可以使用全新的 [NuxtHub](https://hub.nuxt.com/) 来快捷的部署本项目，如果您有在 Vercel 上部署项目的经历，那么过程是大致相同的，当然，也可以使用 [Cloudflare Pages](https://pages.cloudflare.com/) 来部署
 - 在点击下一步之前请先配置好环境变量，具体内容请参考 `.env.example` 文件中的内容，其中 `API_KEY` 为必填项
 - 若进展顺利，你就可看到项目主页面了
-
-### Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/imsyy/site-status)
-
-- 点击上方按钮以前往部署
-- 在环境变量中添加下方的内容（ 重要 ）
-
-  | **变量名称**        | **值** |
-  | ------------------- | ------ |
-  | DEPLOYMENT_PLATFORM | auto   |
-  | API_KEY             |        |
-
-- 大功告成
+- 如果出现 node:async_hooks 缺失错误，请在运行时里面设置兼容性标志：nodejs_compat
 
 ### 其他托管平台
 
