@@ -19,16 +19,11 @@
         <n-text depth="3" @click="jumpLink(linkData.github)">
           SiteStatus
         </n-text>
-        Version {{ version }}
+        V {{ version }}
       </n-p>
       <n-p depth="3">
-        {{ $t("footer.basedOn") }}
-        <n-text depth="3" @click="jumpLink('https://uptimerobot.com/')">
-          {{ $t("uptimeRobot") }}
-        </n-text>
-        {{ $t("footer.interface") }} |
-        {{ $t("footer.checkFrequency") }}
-        {{ $t("footer.fiveMinutes") }} |
+        <!-- Copyright &copy; 2020 - {{ new Date().getFullYear() }} -->
+        <!-- <n-text depth="3" @click="jumpLink(linkData.home)"> IMSYY </n-text> -->
         <n-text
           v-if="siteIcp.length > 0"
           depth="3"
@@ -38,8 +33,13 @@
         </n-text>
       </n-p>
       <n-p depth="3">
-        <!-- Copyright &copy; 2020 - {{ new Date().getFullYear() }} -->
-        <!-- <n-text depth="3" @click="jumpLink(linkData.home)"> IMSYY </n-text> -->
+        {{ $t("footer.basedOn") }}
+        <n-text depth="3" @click="jumpLink('https://uptimerobot.com/')">
+          {{ $t("uptimeRobot") }}
+        </n-text>
+        {{ $t("footer.interface") }} |
+        {{ $t("footer.checkFrequency") }}
+        {{ $t("footer.fiveMinutes") }}
       </n-p>
     </n-flex>
   </footer>

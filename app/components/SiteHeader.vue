@@ -106,9 +106,10 @@ const nextUpdateTime = computed(() => {
   const time = updateTime.value;
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
-  return minutes > 0
-    ? `${minutes} ${t("meta.minute")} ${seconds} ${t("meta.second")}`
-    : `${seconds} ${t("meta.second")}`;
+  // return minutes > 0
+  //   ? `${minutes} ${t("meta.minute")} ${seconds} ${t("meta.second")}`
+  //   : `${seconds} ${t("meta.second")}`;
+  return minutes > 0 ? `${minutes}:${seconds}` : `${seconds}`;
 });
 
 // 更新数据

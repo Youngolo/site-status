@@ -11,7 +11,7 @@ const siteConfig = {
   siteDescription: process.env.SITE_DESCRIPTION || "一个简约的监测服务 | a simple monitoring service, power by uptimerobot",
   siteKeywords: process.env.SITE_KEYWORDS || "监测服务,监测,监控",
   siteLogo: process.env.SITE_LOGO || "/favicon.ico",
-  siteIcp: process.env.SITE_ICP || "湘ICP备20010719号-2",
+  siteIcp: process.env.SITE_ICP || "",
   countDays: Number(process.env.COUNT_DAYS || 60),
   showLink: process.env.SHOW_LINK === "true" || false,
   needLogin: process.env.SITE_PASSWORD != undefined && process.env.SITE_PASSWORD.length > 0 || false,

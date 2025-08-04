@@ -2,13 +2,8 @@
 <template>
   <Transition name="fade" mode="out-in">
     <div v-if="!isEmpty(siteData)" class="site-cards">
-      <n-card
-        v-for="(site, index) in siteData"
-        :key="index"
-        :style="{ animationDelay: `${index * 0.1}s` }"
-        class="site-item"
-        hoverable
-      >
+      <n-card v-for="(site, index) in siteData" :key="index" :style="{ animationDelay: `${index * 0.1}s` }"
+        class="site-item" hoverable>
         <!-- 信息 -->
         <n-flex class="meta" justify="space-between">
           <n-flex :size="8" class="title" align="center">
@@ -30,49 +25,27 @@
               </n-text>
             </n-popover>
             <!-- 跳转 -->
-            <n-button
-              v-if="site?.url"
-              :focusable="false"
-              size="tiny"
-              tertiary
-              round
-              @click="jumpLink(site.url)"
-            >
+            <n-button v-if="site?.url" :focusable="false" size="tiny" tertiary round @click="jumpLink(site.url)">
               <template #icon>
                 <Icon name="icon:link" />
               </template>
             </n-button>
           </n-flex>
-          <n-flex
-            :style="{
-              '--bg-color': `var(--${siteStatusMap[site.status]?.type || 'unknown'}-color)`,
-            }"
-            class="status"
-            align="center"
-          >
+          <n-flex :style="{
+            '--bg-color': `var(--${siteStatusMap[site.status]?.type || 'unknown'}-color)`,
+          }" class="status" align="center">
             <div v-if="site.status !== 0" class="point" />
             <Icon v-else name="icon:pause" />
             <n-text>{{ siteStatusMap[site.status]?.text }}</n-text>
           </n-flex>
         </n-flex>
         <!-- 每日数据 -->
-        <n-flex
-          v-if="site?.days?.length"
-          :size="2"
-          class="timeline"
-          justify="space-between"
-        >
-          <n-popover
-            v-for="(day, dayIndex) in site.days"
-            :key="day?.date || dayIndex"
-          >
+        <n-flex v-if="site?.days?.length" :size="2" class="timeline" justify="space-between">
+          <n-popover v-for="(day, dayIndex) in site.days" :key="day?.date || dayIndex">
             <template #trigger>
-              <div
-                :style="{
-                  backgroundColor: `var(--${getDayStatus(day.percent)}-color)`,
-                }"
-                class="day"
-              />
+              <div :style="{
+                backgroundColor: `var(--${getDayStatus(day.percent)}-color)`,
+              }" class="day" />
             </template>
             <div class="day-data">
               <n-text class="date" depth="3">
@@ -122,20 +95,11 @@
         </n-flex>
       </n-card>
     </div>
-    <div
-      v-else
-      :style="{ '--color': `var(--${statusStore.siteStatus}-color)` }"
-      class="site-cards loading"
-    >
+    <div v-else :style="{ '--color': `var(--${statusStore.siteStatus}-color)` }" class="site-cards loading">
       <n-card class="site-item" hoverable>
         <Transition name="fade" mode="out-in">
           <n-spin v-if="statusStore.siteStatus !== 'unknown'" />
-          <n-result
-            v-else
-            status="error"
-            :title="$t('card.error')"
-            :description="$t('card.errorText')"
-          >
+          <n-result v-else status="error" :title="$t('card.error')" :description="$t('card.errorText')">
             <template #footer>
               <n-button tertiary round @click="refresh">
                 {{ $t("meta.refresh") }}
@@ -205,29 +169,35 @@ onMounted(getSiteData);
   max-width: 900px;
   margin: 30px auto 20px;
   padding: 0 20px;
+
   .site-item {
     opacity: 0;
     border-radius: 12px;
     animation: float-up 0.5s forwards;
     overflow: hidden;
+
     .meta {
       .site-name {
         font-weight: bold;
       }
+
       .n-tag {
         --n-height: 20px;
         cursor: pointer;
       }
+
       .status {
         .n-text {
           color: var(--bg-color);
         }
+
         svg {
           font-size: 22px;
           margin-right: -4px;
           color: var(--bg-color);
         }
       }
+
       .point {
         position: relative;
         width: 14px;
@@ -235,6 +205,7 @@ onMounted(getSiteData);
         min-width: 14px;
         background-color: var(--bg-color);
         border-radius: 50%;
+
         &::after {
           content: "";
           background-color: var(--bg-color);
@@ -251,8 +222,10 @@ onMounted(getSiteData);
         }
       }
     }
+
     .timeline {
       margin: 15px 0 10px;
+
       .day {
         height: 26px;
         flex: 1;
@@ -261,26 +234,40 @@ onMounted(getSiteData);
         transition: transform 0.3s;
         transform-origin: bottom;
         cursor: pointer;
+
         &:hover {
           transform: scale(1.1);
         }
       }
     }
+
     .summary {
       .date {
         width: 100px;
+
         &:last-child {
           text-align: right;
         }
       }
+
       .n-text {
         font-size: 13px;
       }
     }
+
+    @media (max-width: 768px) {
+      .summary {
+        .date {
+          width: 50px;
+        }
+      }
+    }
   }
+
   &.loading {
     .site-item {
       min-height: 200px;
+
       :deep(.n-card__content) {
         padding: 24px;
         display: flex;
@@ -288,15 +275,18 @@ onMounted(getSiteData);
         justify-content: center;
       }
     }
+
     .n-spin-body {
       --n-size: 40px;
       --n-color: var(--color);
     }
   }
 }
+
 .day-data {
   display: flex;
   flex-direction: column;
+
   .date {
     font-size: 12px;
   }

@@ -1,11 +1,11 @@
 {
   "uptimeRobot": "UptimeRobot",
   "site": {
-    "loading": "站点状态加载中",
-    "unknown": "站点状态未知",
-    "normal": "站点运行正常",
-    "error": "全部站点出现异常",
-    "warn": "部分站点出现异常"
+    "loading": "状态加载中",
+    "unknown": "状态未知",
+    "normal": "运行正常",
+    "error": "全部出现异常",
+    "warn": "部分出现异常"
   },
   "nav": {
     "about": "关于本站",
@@ -20,7 +20,7 @@
   "footer": {
     "basedOn": "基于",
     "interface": "接口",
-    "checkFrequency": "检测频率",
+    "checkFrequency": "频率",
     "fiveMinutes": "5 分钟"
   },
   "card": {
