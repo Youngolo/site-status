@@ -26,3 +26,4 @@ sw.*
 
 .wrangler
 .vercel
+.vscode/settings.json

@@ -1,6 +1,6 @@
 <template>
   <footer id="footer">
-    <n-flex class="link" align="center">
+    <!-- <n-flex class="link" align="center">
       <n-button
         v-for="(item, key, index) in linkData"
         :key="index"
@@ -13,7 +13,7 @@
           <Icon :name="`icon:${key}`" />
         </template>
       </n-button>
-    </n-flex>
+    </n-flex> -->
     <n-flex :size="4" class="text" align="center" vertical>
       <n-p depth="3">
         <n-text depth="3" @click="jumpLink(linkData.github)">
@@ -30,7 +30,7 @@
         {{ $t("footer.checkFrequency") }}
         {{ $t("footer.fiveMinutes") }}
       </n-p>
-      <n-p depth="3">
+      <!-- <n-p depth="3">
         Copyright &copy; 2020 - {{ new Date().getFullYear() }}
         <n-text depth="3" @click="jumpLink(linkData.home)"> IMSYY </n-text>
         <n-text
@@ -40,7 +40,7 @@
         >
           | {{ siteIcp }}
         </n-text>
-      </n-p>
+      </n-p> -->
     </n-flex>
   </footer>
 </template>

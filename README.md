@@ -1,8 +1,6 @@
-English | [简体中文](./README.zh-CN.md)
-
 <div align="center">
 <h1>site-status</h1>
-<p>An online status panel based on UptimeRobot API</p>
+<p>一个基于 UptimeRobot API 的在线状态面板</p>
 <br />
 <img src="https://img.shields.io/github/last-commit/imsyy/site-status" alt="last commit"/>
 <img src="https://img.shields.io/github/languages/code-size/imsyy/site-status" alt="code size"/>
@@ -17,57 +15,56 @@ English | [简体中文](./README.zh-CN.md)
 
 > Demo password: `123456`
 
-- [IMSYY-Site Monitoring](https://status.imsyy.top/)
+- [IMSYY-站点监测](https://status.imsyy.top/)
 
-## 🎉 Features
+## 🎉 特色
 
-- 🌍 Multi-platform deployment support
-- ✨ Elegant and smooth browsing experience
-- 🔐 Supports site password encryption (JWT + Hash)
-- 👀 Overall site status preview
-- ⏲️ Data auto-refresh
-- 📱 Mobile-friendly design
+- 🌍 多平台部署支持
+- ✨ 优雅且流畅的浏览体验
+- 🔐 支持站点密码加密（JWT + Hash）
+- 👀 全站状态预览
+- ⏲️ 数据定时刷新
+- 📱 移动端适配
 
-## Prerequisites
+## 事先准备
 
-- You need to first add site monitors on [UptimeRobot](https://uptimerobot.com/dashboard) and get the `Read-Only API Key` from the `My Settings` or [API Management](https://dashboard.uptimerobot.com/integrations) page (Do not use the `Main API key`).
-- You can also use `Monitor-specific API keys` for individual monitors.
+- 您需要先到 [UptimeRobot](https://uptimerobot.com/dashboard) 添加站点监控，并在 `My Settings` 页面或者 [API 管理](https://dashboard.uptimerobot.com/integrations) 页面获取类型为 `Read-Only API Key` 的 `API Key`，或者使用用于单独监视器的 `Monitor-specific API keys`（ 不要使用 `Main API key` ）
 
-## Deployment
+## 部署
 
 ### Cloudflare
 
-This project is deployed by default using [Cloudflare Pages](https://pages.cloudflare.com/).
+本项目默认使用 [Cloudflare Pages](https://pages.cloudflare.com/) 来行部署
 
-- `star` and `fork` this project 😘
-- You can use the new [NuxtHub](https://hub.nuxt.com/) to quickly deploy this project. If you have experience deploying on Vercel, the process is quite similar. Alternatively, you can use [Cloudflare Pages](https://pages.cloudflare.com/) for deployment.
-- Before moving on, make sure to configure the environment variables as detailed in the `.env.example` file. The `API_KEY` is a required field.
-- If everything goes smoothly, you should be able to see the project’s main page.
+- `star` 并 `fork` 本项目 😘
+- 可以使用全新的 [NuxtHub](https://hub.nuxt.com/) 来快捷的部署本项目，如果您有在 Vercel 上部署项目的经历，那么过程是大致相同的，当然，也可以使用 [Cloudflare Pages](https://pages.cloudflare.com/) 来部署
+- 在点击下一步之前请先配置好环境变量，具体内容请参考 `.env.example` 文件中的内容，其中 `API_KEY` 为必填项
+- 若进展顺利，你就可看到项目主页面了
 
 ### Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/imsyy/site-status)
 
-- Click the button above to deploy.
-- Add the following environment variables (important):
+- 点击上方按钮以前往部署
+- 在环境变量中添加下方的内容（ 重要 ）
 
-  | **Variable Name**   | **Value** |
-  | ------------------- | --------- |
-  | DEPLOYMENT_PLATFORM | auto      |
-  | API_KEY             |           |
+  | **变量名称**        | **值** |
+  | ------------------- | ------ |
+  | DEPLOYMENT_PLATFORM | auto   |
+  | API_KEY             |        |
 
-- All set!
+- 大功告成
 
-### Other Hosting Platforms
+### 其他托管平台
 
-For deployment guides, refer to the official documentation: [Deploying Nuxt Apps](https://nuxtjs.org.cn/deploy)
+请参考官方文档：[部署 Nuxt 应用](https://nuxtjs.org.cn/deploy)
 
 ## Q & A
 
-### How to Enable Site Encryption
+### 如何开启站点加密
 
-Add the following environment variables: `SITE_PASSWORD` and `SITE_SECRET_KEY`. Both are required. The `SITE_PASSWORD` is the site password, and the `SITE_SECRET_KEY` is the encryption key, which you can choose freely.
+在环境变量中添加 `SITE_PASSWORD` 和 `SITE_SECRE_KEY`，都必须填写，缺一不可，其中 `SITE_PASSWORD`是站点密码，`SITE_SECRE_KEY` 是加密密钥，可随意填写
 
-## Thanks
+## 鸣谢
 
-- [uptime-status](https://github.com/yb/uptime-status) inspired this project
+- [uptime-status](https://github.com/yb/uptime-status) 受此项目启发

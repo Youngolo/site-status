@@ -77,14 +77,14 @@ const renderIcon = (icon: string) => () =>
 
 // 导航栏菜单
 const navMenu = computed<DropdownOption[]>(() => [
-  {
+  /*{
     key: "github",
     label: "GitHub",
     icon: renderIcon("icon:github"),
     props: {
       onClick: () => window.open("https://github.com/imsyy/site-status"),
     },
-  },
+  },*/
   {
     key: "about",
     label: t("nav.about"),
